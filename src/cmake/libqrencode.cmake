@@ -10,7 +10,8 @@ endif()
 
 # --------------------------------------------------------------------------------------------------
 # Add libencode module...
-if(${CMAKE_BUILD_TYPE} STREQUAL "Release")
+#if(${CMAKE_BUILD_TYPE} STREQUAL "Release")
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
   set(x_qrencode "qrencode")
 else()
   set(x_qrencode "qrencoded")
