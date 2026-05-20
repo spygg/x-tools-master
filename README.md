@@ -1,6 +1,6 @@
 # X-tools
 
-[origin from x-tools](hhttps://github.com/x-tools-author/x-tools "原链接")
+[origin from x-tools](https://github.com/x-tools-author/x-tools)
 
 ## 简介
 
