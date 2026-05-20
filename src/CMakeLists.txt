@@ -317,22 +317,22 @@ endif()
 include(${CMAKE_SOURCE_DIR}/xapps/xapps.cmake)
 
 
-set(EXE_OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bin_${QT_VERSION})
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${EXE_OUTPUT_DIR})
-set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE_OUTPUT_DIR})
-
 
 if(LINUX)
-	# 复制数据文件
-	add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-		COMMAND ${CMAKE_COMMAND} -E copy_if_different
-			${CMAKE_CURRENT_SOURCE_DIR}/onekeydeploy.sh
-			${EXE_OUTPUT_DIR}
-	)
+    set(EXE_OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../bin_${QT_VERSION})
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${EXE_OUTPUT_DIR})
+    set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${EXE_OUTPUT_DIR})
 
-	add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-		COMMAND ${CMAKE_COMMAND} -E copy_if_different
-			${CMAKE_CURRENT_SOURCE_DIR}/xTools.png
-			${EXE_OUTPUT_DIR}
-	)
+    # 复制数据文件
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                    ${CMAKE_CURRENT_SOURCE_DIR}/onekeydeploy.sh
+                    ${EXE_OUTPUT_DIR}
+    )
+
+    add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                    ${CMAKE_CURRENT_SOURCE_DIR}/xTools.png
+                    ${EXE_OUTPUT_DIR}
+    )
 endif()

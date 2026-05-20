@@ -1,6 +1,6 @@
 # https://github.com/QtExcel/QXlsx
-# set(qxlsx_package_name "QXlsx-1.4.7")
-set(qxlsx_package_name "QXlsx-1.5.0")
+set(qxlsx_package_name "QXlsx-1.4.7")
+# set(qxlsx_package_name "QXlsx-1.5.0")
 
 # --------------------------------------------------------------------------------------------------
 # Extract QXlsx zip...
